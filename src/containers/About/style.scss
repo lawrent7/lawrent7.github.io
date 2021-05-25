@@ -1,0 +1,132 @@
+@import '../App/variables';
+
+.about-page {
+  overflow: hidden;
+
+  .section {
+    &.about {
+      padding: 10rem 0;
+      position: relative;
+      z-index: 5;
+
+      .thumbnail {
+        position: relative;
+        z-index: 2;
+    
+        img {
+          @include border-radius(1rem);
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+          @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+
+          &:hover {
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+          }
+        }
+      }
+  
+      .about-inner {
+        p.description {
+          color: #717173;
+          font-size: 1.8rem;
+          font-weight: 300;
+          margin-bottom: 3rem;
+          text-align: justify;
+          
+          a {
+            color: rgb(29, 29, 36);
+  
+            &:hover {
+              color: $red-color;
+            }
+          }
+        }
+      }
+    }
+
+    &.tools {
+      position: relative;
+
+      &:before,
+      &:after {
+        background-image: url(../../assets/images/cta-background.png);
+        background-repeat: repeat-x;
+        background-size: auto 10rem;
+        content: "";
+        height: 10rem;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 5;
+      }
+    
+      &:before {
+        top: -0.1rem;
+        @include rotate(180deg);
+      }
+    
+      &:after {
+        bottom: -0.1rem;
+      }
+
+      .tools-inner {
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: #FFF;
+        background: -moz-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+        background: -webkit-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+        background: linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$orange-color', endColorstr='$red-color', GradientType=1);
+        display: block;
+        padding: 10rem 0;
+        position: relative;
+        z-index: 2;
+      
+        &:before {
+          background-attachment: fixed;
+          background-image: url(../../assets/images/pattern.png);
+          content: "";
+          height: 100%;
+          left: 0;
+          @include opacity(0.5);
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: -1;
+        }
+      }
+    }
+
+    &.progresses {
+      padding: 10rem 0 25rem;
+
+      .section-title {
+        margin-bottom: 10rem;
+
+        h2 {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.logos {
+  @include align_items(center);
+  @include flexbox(flex);
+  @include flex_direction(row);
+  @include flex_wrap(wrap);
+  @include justify_content(space-between);
+  width: 100%;
+
+  svg {
+    font-size: 6rem;
+    @include svg(rgba(255, 255, 255, 0.75));
+    margin: 3rem 4rem;
+    @include transition(0.4s ease-in-out);
+
+    &:hover {
+      @include scale(1.25);
+    }
+  }
+}

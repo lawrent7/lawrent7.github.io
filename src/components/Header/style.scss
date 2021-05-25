@@ -1,0 +1,165 @@
+@import '../../containers/App/variables';
+
+header {
+  background: transparent;
+  padding: 0 5rem;
+  position: absolute;
+  top: 0;
+  @include transition(0.3s);
+  width: 100%;
+  z-index: 999;
+
+  .header-wrapper {
+    @include align_items(center);
+    @include flexbox(flex);
+    @include flex_wrap(wrap);
+    @include justify_content(space-between);
+    padding: 2rem 0;
+    @include transition(0.3s);
+
+    .header-left {
+      .logo {
+        text-align: center;
+        width: auto;
+
+        a {
+          img {
+            height: 6.5rem;
+            @include transition(0.3s);
+          }
+        }
+      }
+
+      .main-menu {
+        padding-left: 5rem;
+
+        ul.menu {
+          @include flexbox(flex);
+          @include flex_wrap(wrap);
+          @include justify_content(flex-end);
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin: 0 1.5rem;
+            position: relative;
+
+            a {
+              color: $text-color;
+              display: inline-block;
+              font-family: $font-secondary;
+              font-size: $font-size;
+              font-weight: 600;
+              padding: 2rem 0;
+              position: relative;
+              @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+
+              &:hover,
+              &.active {
+                color: $red-color;
+              }
+            }
+
+            &:first-child {
+              margin-left: 0;
+            }
+    
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .header-right {
+      @include align_items(center);
+      @include flexbox(flex);
+      @include flex_wrap(wrap);
+
+      .social-share-inner {
+        ul.social-share {
+          li {
+            &:hover {
+              a {
+                color: $red-color;
+              }
+            }
+          }
+        }
+      }
+
+      .menu-trigger {
+        span {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &.menu-open {
+      .menu-trigger span {
+        @include opacity(0);
+      }
+    }
+  }
+
+  &:not(.sticky) {
+    .header-wrapper {
+      .header-left {
+        .main-menu {
+          ul.menu {
+            li {
+              a {
+                color: #FFF;
+
+                &:hover,
+                &.active {
+                  color: $yellow-color;
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      .header-right {
+        .social-share-inner {
+          ul.social-share {
+            li {
+              a {
+                color: #FFF;
+              }
+
+              &:hover {
+                a {
+                  color: $yellow-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.sticky {
+    background: #FFF;
+    @include box-shadow(0 0 1rem rgba(0, 0, 0, 0.25));
+    position: fixed;
+
+    .header-wrapper {
+      padding: 0;
+
+      .header-left {
+        .logo {
+          a {
+            img {
+              height: 4.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

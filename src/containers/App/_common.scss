@@ -1,0 +1,733 @@
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+*:focus {
+  outline: 0 none;
+}
+
+html,
+body {
+  -moz-osx-font-smoothing: antialiased;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #FFF;
+  color: $text-color;
+  font-family: $font-primary;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: rgba($text-color, 0.5);
+  height: 0;
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($text-color, 0.75);
+}
+
+a {
+  color: $red-color;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition(0.4s ease);
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    outline: 0 none;
+    text-decoration: none;
+  }
+}
+
+hr {
+  background-color: $grey-color;
+  border: none;
+  color: $grey-color;
+  font-family: $font-primary;
+  height: 0;
+  overflow: initial;
+}
+
+@include selection(#FFF, $red-color);
+
+/* Typography */
+p {
+  margin: 0 0 1.5rem;
+}
+
+small {
+  font-size: 80%;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1rem;
+}
+
+code {
+  background: #F1F1F1;
+  border: 0.1rem solid #E1E1E1;
+  @include border-radius(0.4rem);
+  font-family: monospace, monospace;
+  font-size: 90%;
+  margin: 0 0.2rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+pre {
+  overflow: auto;
+
+  > code {
+    display: block;
+    padding: 1rem 1.5rem;
+    white-space: pre;
+  }
+}
+
+sup,
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+h1 {
+  font-size: 6.4rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 5.4rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  padding-left: 1.5rem;
+
+  ul,
+  ol {
+    font-size: 90%;
+    margin: 1.5rem 0;
+  }
+
+  &.unstyled {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+/* Other */
+article,
+aside,
+details,
+figcaption,
+figure,
+hgroup,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+.hidden {
+  display: none;
+}
+
+abbr[title] {
+  border-bottom: 0.1rem dotted;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: $yellow-color;
+  color: #000;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+[gradient-overlay] {
+  position: relative;
+  z-index: 1;
+}
+
+[gradient-overlay] > div,
+[gradient-overlay] > * {
+  position: relative;
+  z-index: 1;
+}
+
+[gradient-overlay]:before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+[gradient-overlay]:before {
+  background: #000;
+  background: -moz-linear-gradient(top, #000 25%,  #333 100%);
+  background: -webkit-linear-gradient(top, #000 25%, #333 100%);
+  background: linear-gradient(to bottom, #000 25%, #333 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#333',GradientType=0 );
+}
+
+@for $i from 1 through 100 {
+  [gradient-overlay="#{$i}"]:before {
+    opacity: #{$i * 0.01};
+  }
+}
+
+.portfolio-item {
+  .portfolio {
+    position: relative;
+
+    .thumbnail {
+      text-align: center;
+
+      img {
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor;
+        @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+      }
+    }
+
+    &:hover {
+      .thumbnail {
+        img {
+          @include transform(translate3d(0, -1rem, 0));
+        }
+      }
+    }
+  }
+}
+
+.thumb,
+.thumbnail {
+  img {
+    @include border-radius(1rem);
+  }
+}
+
+/* Forms */
+form {
+  font-family: $font-primary;
+
+  .form-group {
+    position: relative;
+
+    + .form-group {
+      margin-top: 1.5rem;
+    }
+  }
+
+  a {
+    font-family: $font-primary;
+  }
+
+  .form-error {
+    background: $red-color;
+    @include border-radius(0.3rem);
+    bottom: 0.7rem;
+    color: #FFF;
+    display: block;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0;
+    padding: 0.3rem 0.7rem;
+    position: absolute;
+    right: 0.7rem;
+    z-index: 99;
+
+    &:before {
+      border: 0.5rem solid transparent;
+      border-right-color: $red-color;
+      content: '';
+      height: 0;
+      left: -1rem;
+      position: absolute;
+      top: 50%;
+      @include translate(0, -50%);
+      width: 0;
+    }
+  }
+}
+
+/* Inputs */
+input {
+  &[type="text"],
+  &[type="password"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="date"],
+  &[type="month"],
+  &[type="time"],
+  &[type="week"],
+  &[type="number"],
+  &[type="email"],
+  &[type="url"],
+  &[type="search"],
+  &[type="tel"],
+  &[type="color"],
+  &[type="file"] {
+    @include appearance(none);
+    background: #FFF;
+    border: 0.1rem solid $grey-color;
+    @include border-radius(0.4rem);
+    @include box-shadow(none);
+    color: $text-color;
+    display: block;
+    font-family: $font-primary;
+    font-size: $font-size;
+    height: 3rem;
+    line-height: $line-height;
+    margin: 0;
+    outline: 0;
+    padding: 0.5rem 1rem;
+    @include transition(0.4s ease);
+    width: 100%;
+
+    &:focus {
+      border-color: $red-color;
+    }
+
+    @include placeholder {
+      color: inherit;
+      @include opacity(0.5);
+    }
+
+    &.invalid {
+      background: rgba($red-color, 0.15);
+      border-color: $red-color;
+    }
+  }
+
+  &[disabled] {
+    background: $grey-color;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &.custom-checkbox,
+  &[type="radio"] {
+    cursor: pointer;
+    display: inline-block;
+    left: -999.9rem;
+    padding: 0;
+    position: absolute;
+
+    + label {
+      cursor: pointer;
+      display: block;
+      font-weight: 400;
+      line-height: 1.8rem;
+      margin: 0 0 0.7rem;
+      position: relative;
+      padding: 0 0 0 3rem;
+      width: 100%;
+    }
+  }
+
+  &.custom-checkbox {
+    + label {
+      &:before {
+        background: #FFF;
+        border: 0.2rem solid $red-color;
+        @include border-radius(0.4rem);
+        content: "";
+        display: block;
+        height: 2rem;
+        position: absolute;
+        top: 50%;
+        @include transition(all 0.3s);
+        @include translate(0, -50%);
+        width: 2rem;
+      }
+
+      &:after {
+        background: #FFF;
+        border-top: 0 solid $red-color;
+        border-left: 0 solid $red-color;
+        border-right: 0.3rem solid $red-color;
+        border-bottom: 0.3rem solid $red-color;
+        @include box-sizing(unset);
+        content: "";
+        display: block;
+        height: 0.7rem;
+        left: 0.7rem;
+        @include opacity(0);
+        position: absolute;
+        top: 0.3rem;
+        @include transition(all 0.3s);
+        @include rotate(45deg);
+        visibility: hidden;
+        width: 0.4rem;
+      }
+
+      &:empty {
+        min-height: 1.8rem;
+      }
+    }
+
+    &:checked {
+      + label {
+        &:after {
+          @include opacity(1);
+          visibility: visible;
+        }
+      }
+    }
+
+    &:focus {
+      + label {
+        &:before {
+          @include box-shadow(0 0 0.3rem 0.3rem rgba($red-color, 0.3));
+        }
+      }
+    }
+
+    &[disabled] {
+      + label {
+        @include opacity(0.35);
+
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  &[type="radio"] {
+    + label {
+      &:before {
+        background: #FFF;
+        border: 0.2rem solid $red-color;
+        @include border-radius(50%);
+        content: "";
+        display: block;
+        height: 2rem;
+        position: absolute;
+        @include transition(all 0.3s);
+        @include translate(0, -50%);
+        top: 50%;
+        width: 2rem;
+      }
+
+      &:after {
+        background: #FFF;
+        @include border-radius(50%);
+        content: "";
+        display: block;
+        height: 1rem;
+        left: 0.5rem;
+        position: absolute;
+        top: 50%;
+        @include transition(all 0.3s);
+        @include translate(0, -50%);
+        width: 1rem;
+      }
+    }
+
+    &:checked {
+      + label {
+        &:after {
+          background: $red-color;
+        }
+      }
+    }
+  }
+}
+
+textarea {
+  @include appearance(none);
+  background: #FFF;
+  border: 0.1rem solid $grey-color;
+  @include border-radius(0.4rem);
+  @include box-shadow(none);
+  color: $text-color;
+  display: block;
+  font-family: $font-primary;
+  font-size: $font-size;
+  height: auto;
+  line-height: $line-height;
+  margin: 0;
+  max-width: 100%;
+  min-height: 5rem;
+  outline: 0;
+  overflow: auto;
+  padding: 0.5rem 1rem;
+  @include transition(0.4s ease);
+  width: 100%;
+
+  &:focus {
+    border-color: $red-color;
+  }
+
+  &.invalid {
+    background: rgba($red-color, 0.15);
+    border-color: $red-color;
+  }
+}
+
+select {
+  @include appearance(none);
+  background-image: linear-gradient(45deg, transparent 50%, $grey-color 50%), linear-gradient(135deg, $grey-color 50%, transparent 50%);
+  background-position: calc(100% - 2rem) 1em, calc(100% - 1.5rem) 1em;
+  background-size: 0.5rem 0.5rem, 0.5rem 0.5rem;
+  background-repeat: no-repeat;
+  border: 0.1rem solid $grey-color;
+  @include border-radius(0.4rem);
+  @include box-shadow(none);
+  color: rgba($text-color, 0.54);
+  display: block;
+  font-family: $font-primary;
+  font-size: $font-size;
+  height: 3rem;
+  line-height: $line-height;
+  margin: 0;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  @include transition(0.4s ease);
+  width: 100%;
+
+  &:focus {
+    border-color: $red-color;
+  }
+
+  option {
+    color: $text-color;
+  }
+}
+
+label {
+  display: inline-block;
+  font-family: $font-primary;
+  font-weight: 600;
+}
+
+legend {
+  border: 0;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+fieldset {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons */
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  @include appearance(none);
+  @include border-radius(5rem);
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: $font-size;
+  font-weight: normal;
+  line-height: $line-height;
+  outline: 0 !important;
+  padding: 1rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  @include transition(0.4s ease);
+  white-space: normal;
+  width: auto;
+
+  &:hover {
+    box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.1);
+    @include translate(0, -0.5rem);
+  }
+}
+
+.btn {
+  &-primary {
+    background-color: $red-color;
+    border: 0 none;
+    color: #FFF;
+
+    &:hover {
+      background-color: $red-color;
+      color: #FFF;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $red-color !important;
+      border-color: transparent !important;
+      box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.1) !important;
+      color: #FFF;
+    }
+  }
+
+  &-secondary {
+    background-color: #FFF;
+    border: 0 none;
+    color: $red-color;
+
+    &:hover {
+      background-color: #FFF;
+      color: $red-color;
+    }
+
+    &:focus,
+    &:active {
+      background-color: #FFF !important;
+      border-color: transparent !important;
+      box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.1) !important;
+      color: $red-color;
+    }
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &-download {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    padding: 1.5rem 3rem;
+
+    svg {
+      font-size: 3rem;
+      margin-right: 1.5rem;
+    }
+  }
+
+  &-disabled,
+  &[disabled] {
+    background: $grey-color;
+    border-color: $grey-color;
+    color: $text-color;
+    @include opacity(0.75);
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  + .btn {
+    margin-left: 1.5rem;
+  }
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}

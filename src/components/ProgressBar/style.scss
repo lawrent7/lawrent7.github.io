@@ -1,0 +1,46 @@
+@import '../../containers/App/variables';
+
+.progress-bars {
+  .single-progress {
+    position: relative;
+
+    &:nth-child(2n+3),
+    &:nth-child(2n+4) {
+      margin-top: 3.8rem;
+    }
+
+    .title {
+      color: $text-color;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .progress {
+      background-color: #eee;
+      @include border-radius(1rem);
+      box-shadow: none;
+      height: 2rem;
+      overflow: visible;
+
+      .progress-bar {
+        background: -moz-linear-gradient(-224deg, $orange-color 0%, $red-color 100%);
+        background: -webkit-linear-gradient(-224deg, $orange-color 0%, $red-color 100%);
+        background: linear-gradient(-224deg, $orange-color 0%, $red-color 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$orange-color', endColorstr='$red-color', GradientType=1);
+        @include border-radius(1rem);
+        color: $red-color;
+        position: relative;
+      }
+    }
+
+    .label {
+      color: $text-color;
+      font-size: 1.5rem;
+      font-weight: 500;
+      position: absolute;
+      right: 1.5rem;
+      top: 0;
+    }
+  }
+}

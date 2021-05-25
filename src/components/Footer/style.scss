@@ -1,0 +1,232 @@
+@import '../../containers/App/variables';
+
+footer {
+  background: $text-color;
+  @include align_items(stretch);
+  display: flex !important;
+  @include flex_direction(row);
+  @include flex_wrap(wrap);
+  @include justify_content(space-between);
+  position: relative;
+  width: 100%;
+
+  @media #{$lt-xl} {
+    @include flex_direction(column-reverse);
+  }
+  
+  &:after {
+    background-image: url(../../assets/images/footer-background.png);
+    background-repeat: repeat-x;
+    background-size: auto 18rem;
+    content: "";
+    height: 18rem;
+    left: auto;
+    right: 0;
+    position: absolute;
+    top: -0.1rem;
+    width: 100%;
+    z-index: 55;
+  }
+
+  .footer-left {
+    max-width: 95rem;
+    padding: 10rem;
+    position: relative;
+    width: 100%;
+    z-index: 60;
+
+    @media #{$lt-xl} {
+      max-width: 100%;
+      padding: 15rem 10rem 5rem;
+    }
+
+    @media #{$sm} {
+      padding: 10rem 5rem 5rem;
+    }
+
+    @media #{$xs} {
+      padding: 10rem 2.5rem 5rem;
+    }
+
+    &:before {
+      background-image: url(../../assets/images/footer-bubble.png);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      height: 60rem;
+      left: 0;
+      position: absolute;
+      top: -9.1rem;
+      width: 100%;
+      z-index: 59;
+
+      @media #{$lt-xl} {
+        height: 50.9rem;
+        top: 0;
+      }
+
+      @media #{$sm} {
+        height: 49rem;
+        top: -3.1rem;
+      }
+
+      @media #{$xs} {
+        background-position: 50% 0;
+        height: 42.9rem;
+        top: 0;
+      }
+    }
+
+    .inner {
+      position: relative;
+      z-index: 60;
+
+      &:after {
+        color: rgba(0, 0, 0, 0.1);
+        content: url(../../assets/images/footer-contact.png);
+        font-size: 24rem;
+        font-weight: 900;
+        height: 30rem;
+        @include opacity(0.75);
+        position: absolute;
+        right: 2.5rem;
+        top: 50%;
+        @include translate(0, -50%);
+        width: 30rem;
+        z-index: -1;
+
+        @media #{$lt-md} {
+          display: none;
+        }
+      }
+  
+      > span {
+        color: #FFF;
+        display: block;
+        font-size: 1.5rem;
+        letter-spacing: 0.4rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+      }
+  
+      h2 {
+        color: #FFF;
+        font-family: $font-secondary;
+        font-size: 7.5rem;
+        font-weight: 900;
+        line-height: 9rem;
+        margin-bottom: 3rem;
+
+        @media #{$xs} {
+          font-size: 5rem;
+          line-height: 7.5rem;
+        }
+      }
+  
+      a.btn-primary {
+        border-color: #FFF;
+        color: #FFF;
+        margin-top: 3rem;
+
+        &:hover {
+          background: #FFF;
+          border-color: #FFF;
+          color: $red-color;
+        }
+      }
+    }
+  }
+  
+  .footer-right {
+    background: $text-color;
+    max-width: calc(100% - 95rem);
+    padding: 20rem 10rem 0;
+    position: relative;
+    width: 100%;
+    z-index: 50;
+
+    @media #{$lt-xl} {
+      max-width: 100%;
+    }
+
+    @media #{$sm} {
+      padding: 20rem 5rem 5rem;
+    }
+
+    @media #{$xs} {
+      padding: 15rem 2.5rem 5rem;
+      text-align: center;
+    }
+
+    .row {
+      position: relative;
+      z-index: 50;
+    }
+
+    .col-sm-6 {
+      + .col-sm-6 {
+        @media #{$xs} {
+          margin-top: 5rem;
+        }
+      }
+    }
+  
+    .footer-links {
+      h4 {
+        color: #FFF;
+        font-weight: 500;
+        margin-bottom: 3rem;
+      }
+  
+      ul {
+        li {
+          a {
+            color: #C6C9D8;
+            font-size: $font-size;
+            @include opacity(0.75);
+            @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+          }
+  
+          &:hover {
+            a {
+              color: $orange-color;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright-text {
+      padding-top: 5rem;
+
+      p {
+        color: #C6C9D8;
+        font-size: 1.4rem;
+        margin: 0;
+        @include opacity(0.75);
+      }
+    }
+  }
+
+  .back-to-top {
+    > div {
+      background-color: #FFF;
+      @include border-radius(50%);
+      @include box-shadow(0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.14), 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.12), 0 0.3rem 0.1rem -0.2rem rgba(0, 0, 0, 0.2));
+      height: 5rem;
+      line-height: 4.9rem;
+      overflow: hidden;
+      text-align: center;
+      width: 5rem;
+      z-index: 999;
+    }
+  
+    svg {
+      color: $text-color;
+      font-size: 1.4rem;
+      height: 2.7rem;
+      width: 2.7rem;
+    }
+  }
+}

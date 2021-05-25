@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,800,900|Poppins:300,400,500,600,700,700i&display=swap');
+
+/* Colors */
+$text-color:   #1F1F25;
+$grey-color:   #D4D4D4;
+$red-color:    #f21059;
+$blue-color:   #87CEEB;
+$green-color:  #1B998B;
+$yellow-color: #FBB040;
+$orange-color: #fa7d4e;
+$facebook:     #3B5998;
+$linkedin:     #0E76A8;
+$instagram:    #fb3958;
+
+/* Typography */
+$font-primary: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
+$font-secondary: 'Montserrat', 'Segoe UI', 'Helvetica Neue', sans-serif;
+$font-size: 2rem;
+$line-height: 1.714286;
+
+/* Mixins */
+/* Clearfix Extend ==> how to use: .row { @extend %clearfix; } */
+%clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  animation: $animation;
+}
+
+@mixin appearance($appearance) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  appearance: $appearance;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($boxShadow...) {
+  -webkit-box-shadow: $boxShadow;
+  -moz-box-shadow: $boxShadow;
+  box-shadow: $boxShadow;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model;
+  -moz-box-sizing: $box-model;
+  box-sizing: $box-model;
+}
+
+@mixin flexbox($properties) {
+  @if $properties == 'flex' {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  } @else if $properties == 'inline-flex' {
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
+}
+
+@mixin align_content($properties) {
+  @if $properties == 'flex-start' {
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+  } @else if $properties == 'flex-end' {
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+  } @else if $properties == 'center' {
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  } @else if $properties == 'space-between' {
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+  } @else if $properties == 'space-around' {
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+  } @else if $properties == 'stretch' {
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+  }
+}
+
+@mixin align_items($properties) {
+  @if $properties == 'flex-start' {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  } @else if $properties == 'flex-end' {
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  } @else if $properties == 'center' {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  } @else if $properties == 'baseline' {
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  } @else if $properties == 'stretch' {
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@mixin align_self($properties) {
+  @if $properties == 'auto' {
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  } @else if $properties == 'flex-start' {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  } @else if $properties == 'flex-end' {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  } @else if $properties == 'center' {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  } @else if $properties == 'baseline' {
+    -webkit-align-self: baseline;
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+  } @else if $properties == 'stretch' {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+  }
+}
+
+@mixin flex_basis($properties) {
+  -webkit-flex-basis: $properties;
+  flex-basis: $properties;
+}
+
+@mixin flex_direction($properties) {
+  -webkit-flex-direction: $properties;
+  -ms-flex-direction: $properties;
+  flex-direction: $properties;
+}
+
+@mixin flex_grow($properties) {
+  -webkit-flex-grow: $properties;
+  -ms-flex-positive: $properties;
+  flex-grow: $properties;
+}
+
+@mixin justify_content($properties) {
+  -webkit-justify-content: $properties;
+  -ms-flex-pack: $properties;
+  justify-content: $properties;
+}
+
+@mixin order($properties) {
+  -webkit-order: $properties;
+  -ms-flex-order: $properties;
+  order: $properties;
+}
+
+@mixin flex_shrink($properties) {
+  -webkit-flex-shrink: $properties;
+  -ms-flex-negative: $properties;
+  flex-shrink: $properties;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin flex_wrap($properties) {
+  @if $properties == 'nowrap' {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  } @else if $properties == 'wrap' {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  } @else if $properties == 'wrap-reverse' {
+    -webkit-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie);
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin perspective($value) {
+  -webkit-perspective: $value;
+  -moz-perspective: $value;
+  -ms-perspective: $value;
+  perspective: $value;
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin scale($factor) {
+  -webkit-transform: scale($factor);
+  -moz-transform: scale($factor);
+  -ms-transform: scale($factor);
+  -o-transform: scale($factor);
+  transform: scale($factor);
+}
+
+@mixin selection($color, $background) {
+  $prefixes: ("-moz-", "");
+
+  @each $prefix in $prefixes {
+    ::#{$prefix}selection {
+      color: $color;
+      background: $background;
+      text-shadow: none;
+    }
+  }
+}
+
+@mixin skew($deg, $deg2) {
+  -webkit-transform: skew($deg, $deg2);
+  -moz-transform: skew($deg, $deg2);
+  -ms-transform: skew($deg, $deg2);
+  -o-transform: skew($deg, $deg2);
+  transform: skew($deg, $deg2);
+}
+
+@mixin svg($color) {
+  color: $color;
+  fill: $color;
+}
+
+@mixin transform($string) {
+  -webkit-transform: $string;
+  -moz-transform: $string;
+  -ms-transform: $string;
+  -o-transform: $string;
+  transform: $string;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+$xl:     'only screen and (min-width: 1600px)';
+$lt-xl:  'only screen and (max-width: 1599px)';
+$lg:     'only screen and (min-width: 1280px) and (max-width: 1599px)';
+$gt-lg:  'only screen and (min-width: 1280px)';
+$lt-lg:  'only screen and (max-width: 1279px)';
+$md:     'only screen and (min-width: 960px) and (max-width: 1279px)';
+$gt-md:  'only screen and (min-width: 960px)';
+$lt-md:  'only screen and (max-width: 959px)';
+$sm:     'only screen and (min-width: 600px) and (max-width: 959px)';
+$xs:     'only screen and (max-width: 599px)';

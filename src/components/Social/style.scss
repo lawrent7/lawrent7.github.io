@@ -1,0 +1,47 @@
+@import '../../containers/App/variables';
+
+.social-share-inner {
+  ul.social-share {
+    margin: -0.6rem;
+    padding: 0;
+
+    li {
+      margin: 0.6rem;
+
+      a {
+        border: 0 none;
+        @include border-radius(100%);
+        color: $text-color;
+        display: inline-block;
+        font-size: $font-size;
+        height: auto;
+        line-height: inherit;
+        text-align: left;
+        @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+        width: 3rem;
+      }
+
+      &:hover {
+        a {
+          background: transparent;
+          border-color: $red-color;
+          @include box-shadow(none);
+          color: $red-color;
+          @include translate(0, -0.3rem);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  .social-share-inner {
+    ul.social-share {
+      margin-top: 2rem;
+
+      @media #{$xs} {
+        justify-content: center !important;
+      }
+    }
+  }
+}

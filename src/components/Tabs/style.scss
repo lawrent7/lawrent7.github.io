@@ -1,0 +1,78 @@
+@import '../../containers/App/variables';
+
+.react-tabs {
+  > ul.react-tabs__tab-list {
+    @include flexbox(flex);
+    @include flex_wrap(wrap);
+    list-style-type: none;
+    margin: 0 -2rem;
+    padding: 0;
+
+    li.react-tabs__tab {
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin: 0 2rem;
+      outline: none;
+      padding-bottom: 0.4rem;
+      position: relative;
+
+      &:before {
+        background: rgba(0, 0, 0, 0.2);
+        bottom: 0;
+        content: "";
+        height: 0.2rem;
+        position: absolute;
+        @include transition(all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0s);
+        width: 3rem;
+      }
+
+      &.react-tabs__tab--selected {
+        color: $red-color;
+
+        &:before {
+          background: currentColor;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  > .react-tabs__tab-panel {
+    .single-tab-content {
+      padding-top: 2rem;
+    
+      p {
+        color: #717173;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 3rem;
+      }
+    
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          color: #7e7e7e;
+          font-size: $font-size;
+          font-weight: 300;
+          line-height: inherit;
+          margin-bottom: 1.5rem;
+    
+          a {
+            color: #717173;
+            display: block;
+            font-weight: 500;
+    
+            span {
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+}

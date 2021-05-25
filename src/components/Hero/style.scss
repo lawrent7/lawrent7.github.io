@@ -1,0 +1,43 @@
+@import '../../containers/App/variables';
+
+.section {
+  &.hero {
+    @include align_items(center);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flexbox(flex);
+    @include justify_content(center);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    .container {
+      @include align_items(center);
+      @include flexbox(flex);
+      @include justify_content(center);
+      height: 100%;
+      padding: 15rem 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .inner {
+      h1.title {
+        background: -moz-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+        background: -webkit-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+        background: linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$orange-color', endColorstr='$red-color', GradientType=1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        font-size: 7.5rem;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: auto;
+      }
+    }
+  }
+}

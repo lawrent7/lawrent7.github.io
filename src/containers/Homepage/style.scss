@@ -1,0 +1,206 @@
+@import '../App/variables';
+
+.homepage {
+  .section {
+    &.home-hero {
+      background-color: $text-color;
+      height: calc(100vh - 20rem);
+      min-height: 75rem;
+      position: relative;
+
+      &:after {
+        background-image: url(../../assets/images/hero-background.png);
+        background-repeat: repeat-x;
+        background-size: auto 20rem;
+        bottom: -19.9rem;
+        content: '';
+        height: 20rem;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      > .slide {
+        background: transparent;
+        height: calc(100vh - 20rem);
+        min-height: 75rem;
+
+        .designer-thumbnail {
+          background-image: url(../../assets/images/avatar-background.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 45rem;
+          position: relative;
+          width: 44rem;
+
+          img {
+            @include border-radius(100%);
+            height: 34rem;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            @include translate(-50%, -50%);
+            width: 34rem;
+          }
+        }
+
+        .inner {
+          > span {
+            color: #FFF;
+            display: block;
+            font-family: $font-secondary;
+            font-size: 1.5rem;
+            letter-spacing: 0.4rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+          }
+      
+          h1.title {
+            color: #FFF;
+            font-family: $font-secondary;
+            font-size: 7.5rem;
+            font-weight: 900;
+            line-height: 9rem;
+            width: 100%;
+
+            span {
+              color: $yellow-color;
+            }
+          }
+      
+          h2 {
+            color: #FFF;
+          }
+        }
+      }
+    }
+
+    &.services {
+      padding: 35rem 0 15rem;
+      position: relative;
+      z-index: 5;
+
+      .section-title {
+        h2 {
+          margin-bottom: 3rem;
+        }
+      }
+
+      .creative-service {
+        .service {
+          background: #F6F6F6;
+          @include border-radius(1rem);
+          margin-top: 9rem;
+          min-height: 42rem;
+          padding: 12rem 3.5rem 3rem;
+          position: relative;
+          @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+          z-index: 2;
+
+          &:before {
+            background: -moz-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+            background: -webkit-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+            background: linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$orange-color', endColorstr='$red-color', GradientType=1);
+            @include border-radius(1rem);
+            content: "";
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+            visibility: hidden;
+            width: 100%;
+            z-index: -1;
+          }
+
+          .icon {
+            background: #F6F6F6;
+            border: 0.1rem solid transparent;
+            @include border-radius(100%);
+            color: $red-color;
+            @include flexbox(inline-flex);
+            font-size: 5.4rem;
+            font-weight: 400;
+            left: 50%;
+            position: absolute;
+            top: 8.6rem;
+            @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+            @include translate(-50%, -100%);
+        
+            svg {
+              stroke-width: 1;
+            }
+          }
+
+          .content {
+            text-align: center;
+
+            h3.title {
+              font-weight: 500;
+              margin-bottom: 2rem;
+              @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+
+              a {
+                color: inherit;
+              }
+            }
+
+            p {
+              color: rgba(29, 29, 36, 0.75);
+              @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+            }
+          }
+
+          &:hover {
+            @include box-shadow(0 1rem 2.5rem 1rem rgba(0, 0, 0, 0.1));
+            padding-top: 8.5rem;
+            @include translate(0, -0.5rem);
+        
+            &:before {
+              @include opacity(1);
+              visibility: visible;
+            }
+        
+            .icon {
+              background: #FFF;
+              border-color: $orange-color;
+              @include box-shadow(0 1rem 2.5rem 1rem rgba($orange-color, 0.25));
+              padding: 3rem;
+              top: 5.7rem;
+            }
+
+            .content {
+              h3.title,
+              p {
+                color: #FFF;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.portfolio {
+      padding: 15rem 0 25rem;
+      position: relative;
+      z-index: 5;
+
+      .section-title {
+        margin-bottom: 10rem;
+
+        h2 {
+          margin-bottom: 3rem;
+        }
+      }
+
+      .portfolio-latest {
+        .btn {
+          margin-top: 7.5rem;
+        }
+      }
+    }
+  }
+}

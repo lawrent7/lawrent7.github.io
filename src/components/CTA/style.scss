@@ -1,0 +1,82 @@
+@import '../../containers/App/variables';
+
+.section {
+  &.cta {
+    position: relative;
+
+    &:before,
+    &:after {
+      background-image: url(../../assets/images/cta-background.png);
+      background-repeat: repeat-x;
+      background-size: auto 10rem;
+      content: "";
+      height: 10rem;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 5;
+    }
+  
+    &:before {
+      top: -0.1rem;
+      @include rotate(180deg);
+    }
+  
+    &:after {
+      bottom: -0.1rem;
+    }
+  
+    .call-to-action {
+      background: -moz-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+      background: -webkit-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+      background: linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$orange-color', endColorstr='$red-color', GradientType=1);
+      padding: 16rem 0;
+      position: relative;
+      z-index: 2;
+    
+      &:before {
+        background-attachment: fixed;
+        background-image: url(../../assets/images/pattern.png);
+        content: "";
+        height: 100%;
+        left: 0;
+        @include opacity(0.5);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+    
+      .inner {
+        > span {
+          color: #FFF;
+          display: block;
+          font-family: $font-secondary;
+          font-size: 1.5rem;
+          letter-spacing: 0.4rem;
+          margin-bottom: 0.9rem;
+          text-transform: uppercase;
+        }
+    
+        h2 {
+          color: #FFF;
+          font-family: $font-secondary;
+          font-size: 7.5rem;
+          font-weight: 900;
+          line-height: 9rem;
+        }
+      
+        .btn-secondary {
+          margin-top: 3rem;
+  
+          &:hover {
+            background: #FFF;
+            border-color: #FFF;
+            color: $red-color;
+          }
+        }
+      }
+    }
+  }
+}

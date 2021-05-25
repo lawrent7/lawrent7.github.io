@@ -1,0 +1,51 @@
+@import '../App/variables';
+
+body.page-404 {
+  header,
+  footer {
+    display: none !important;
+  }
+}
+
+.error-page {
+  @include align_items(center);
+  @include flexbox(flex);
+  height: 100vh;
+  min-height: 50rem;
+
+  h1.title {
+    background: -moz-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+    background: -webkit-linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+    background: linear-gradient(145deg, $orange-color 0%, $red-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$orange-color', endColorstr='$red-color', GradientType=1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 18rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: auto;
+  }
+
+  .sub-title {
+    color: #FFF;
+    font-size: 4.8rem;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  span {
+    color: $text-color;
+    display: block;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2.8rem;
+    @include opacity(0.75);
+  }
+
+  .btn {
+    margin-top: 3rem;
+  }
+}

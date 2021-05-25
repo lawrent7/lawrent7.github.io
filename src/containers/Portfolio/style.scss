@@ -1,0 +1,19 @@
+@import '../App/variables';
+
+.portfolio-page {
+  .section {
+    &.portfolio {
+      padding: 10rem 0 25rem;
+
+      .portfolio-item {
+        .portfolio {
+          .thumbnail {
+            img {
+              max-height: 48rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
