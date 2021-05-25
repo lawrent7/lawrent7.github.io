@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import TextLoop from "react-text-loop";
 import { FiLayers, FiMonitor, FiSmartphone, FiActivity, FiCast, FiCode } from "react-icons/fi";
 import PageHelmet from "../../components/Helmet";
@@ -133,7 +134,7 @@ const Homepage = () => {
               </div>
               <div className="row">
                 <div className="col-lg-12 text-center">
-                  <a href="/portfolio" className="btn btn-primary">All Projects</a>
+                  <NavLink exact to="/portfolio" className="btn btn-primary">All Projects</NavLink>
                 </div>
               </div>
             </div>
