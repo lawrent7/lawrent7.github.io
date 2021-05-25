@@ -36,6 +36,7 @@ const About = () => {
                   <a
                     href={require('../../assets/docs/LC_Resume.pdf')}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary btn-download"
                   >
                     <FiDownloadCloud />
