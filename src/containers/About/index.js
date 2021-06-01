@@ -30,7 +30,7 @@ const About = () => {
             <div className="row">
               <div className="col-lg-5">
                 <div className="thumbnail">
-                  <img src={require('../../assets/images/about-laur.jpg')} alt="About Laur"/>
+                  <img src={require('../../assets/images/about-laur.jpg')} alt="Laurentiu Cuciureanu"/>
                 </div>
                 <div className="text-center">
                   <a

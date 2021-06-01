@@ -24,15 +24,15 @@ const TabsSection = () => {
                 <div className="single-tab-content">
                   <ul>
                     <li>
-                      <a href="/portfolio">User experience design <span> - UI/UX</span></a>
+                      <strong>User experience design <span> - UI/UX</span></strong>
                       Delight the user and make it work.
                     </li>
                     <li>
-                      <a href="/portfolio">Web and user interface design<span> - Development</span></a>
+                      <strong>Web and user interface design<span> - Development</span></strong>
                       Websites, blogs, online shops, web experiences.
                     </li>
                     <li>
-                      <a href="/portfolio">CSS Master<span> - Styling</span></a>
+                      <strong>CSS Master<span> - Styling</span></strong>
                       Color the web.
                     </li>
                   </ul>
@@ -43,13 +43,13 @@ const TabsSection = () => {
                 <div className="single-tab-content">
                   <ul>
                     <li>
-                      <a href="/service">UI/UX Designer</a>2018 - Current
+                      <strong>UI/UX Designer</strong>2018 - Current
                     </li>
                     <li>
-                      <a href="/service">Front-End Developer</a>2013 - Current
+                      <strong>Front-End Developer</strong>2013 - Current
                     </li>
                     <li>
-                      <a href="/service">Data Entry Specialist</a>2012-2013
+                      <strong>Data Entry Specialist</strong>2012-2013
                     </li>
                   </ul>
                 </div>
@@ -59,13 +59,13 @@ const TabsSection = () => {
                 <div className="single-tab-content">
                   <ul>
                     <li>
-                      <a href="/service">Cybernetics, Statistics and Economic Informatics<span> - 2011 </span></a>Diploma
+                      <strong>Cybernetics, Statistics and Economic Informatics<span> - 2011 </span></strong>Diploma
                     </li>
                     <li>
-                      <a href="/service">Computer Science Certificate<span> - 2008 </span></a>Certification
+                      <strong>Computer Science Certificate<span> - 2008 </span></strong>Certification
                     </li>
                     <li>
-                      <a href="/service">ECDL – European Computer Driving Licence<span> - 2007 </span></a>Certification
+                      <strong>ECDL – European Computer Driving Licence<span> - 2007 </span></strong>Certification
                     </li>
                   </ul>
                 </div>

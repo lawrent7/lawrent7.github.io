@@ -13,7 +13,7 @@ const CTA = ({
               <div className="inner text-center">
                 <span>{text}</span>
                 <h2>{title}</h2>
-                <a className="btn btn-secondary" href={link}><span>{label}</span></a>
+                <a className="btn btn-secondary" href={link} rel="noopener noreferrer"><span>{label}</span></a>
               </div>
             </div>
           </div>

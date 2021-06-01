@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.scss';
 
 const PageNotFound = () => {
@@ -15,7 +16,7 @@ const PageNotFound = () => {
               <h3 className="sub-title">Page not found</h3>
               <span>The page you were looking for could not be found.</span>
               <div>
-                <a className="btn btn-primary" href="/">Back To Homepage</a>
+                <NavLink exact to="/" className="btn btn-primary">Back To Homepage</NavLink>
               </div>
             </div>
           </div>

@@ -51,7 +51,7 @@ const Homepage = () => {
             <div className="row align-items-center">
               <div className="col-lg-5">
                 <div className="designer-thumbnail">
-                  <img src={require('../../assets/images/avatar.jpg')} alt="Slider Images" />
+                  <img src={require('../../assets/images/avatar.jpg')} alt="Laurentiu Cuciureanu" />
                 </div>
               </div>
               <div className="col-lg-7">
@@ -121,7 +121,7 @@ const Homepage = () => {
                     <div className="portfolio">
                       <div className="thumbnail">
                         <div className="thumbnail-inner">
-                          <img src={value.bigImage} alt="Portfolio Images"/>
+                          <img src={value.bigImage} alt="Laur Portfolio Item"/>
                         </div>
                       </div>
                     </div>

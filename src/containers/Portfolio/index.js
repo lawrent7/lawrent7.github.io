@@ -63,8 +63,8 @@ class Portfolio extends Component {
                           <div className="portfolio" onClick={() => this.setState({ isOpen: true, item: index })}>
                             <div className="thumbnail">
                               <div className="thumbnail-inner">
-                                <a href="#portfolio-details">
-                                  <img src={value.bigImage} alt="Portfolio Images" />
+                                <a href="#portfolio-details" rel="noopener noreferrer">
+                                  <img src={value.bigImage} alt="Laur Portfolio Item" />
                                 </a>
                               </div>
                             </div>
