@@ -2,6 +2,7 @@
 
 .social-share-inner {
   ul.social-share {
+    @include justify_content(flex-start);
     margin: -0.6rem;
     padding: 0;
 

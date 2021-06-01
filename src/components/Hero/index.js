@@ -26,7 +26,7 @@ const Hero = ({
         backgroundPositionY: `${offset * imageParallaxOffset}px`
       }}
     >
-      <div className="container">
+      <div className="page-center">
         <div className="row">
           <div className="col-lg-12">
             <div className="inner text-center">

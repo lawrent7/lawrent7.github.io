@@ -6,7 +6,17 @@
 
     &:nth-child(2n+3),
     &:nth-child(2n+4) {
-      margin-top: 3.8rem;
+      margin-top: 3.6rem;
+
+      @media #{$lt-md-bs} {
+        margin-top: 0;
+      }
+    }
+
+    + .single-progress {
+      @media #{$lt-md-bs} {
+        margin-top: 3.6rem;
+      }
     }
 
     .title {
@@ -14,6 +24,11 @@
       font-size: 1.5rem;
       font-weight: 500;
       margin-bottom: 1rem;
+
+      @media #{$xs} {
+        padding-right: 4rem;
+        word-break: break-word;
+      }
     }
 
     .progress {

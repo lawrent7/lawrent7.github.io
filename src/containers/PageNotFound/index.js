@@ -7,7 +7,7 @@ const PageNotFound = () => {
 
   return (
     <div className="error-page">
-      <div className="container">
+      <div className="page-center">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">

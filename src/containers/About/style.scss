@@ -42,6 +42,22 @@
             }
           }
         }
+
+        .react-tabs {
+          > ul.react-tabs__tab-list {
+            @media #{$xs} {
+              width: 100%;
+            }
+
+            li.react-tabs__tab {
+              &:last-child {
+                @media #{$xs} {
+                  margin-top: 1.5rem;
+                }
+              }
+            }
+          }
+        }
       }
     }
 
@@ -59,6 +75,11 @@
         position: absolute;
         width: 100%;
         z-index: 5;
+
+        @media #{$xs} {
+          background-size: auto 4rem;
+          height: 4rem;
+        }
       }
     
       &:before {
@@ -100,6 +121,10 @@
     &.progresses {
       padding: 10rem 0 25rem;
 
+      @media #{$xs} {
+        padding: 10rem 0 15rem;
+      }
+
       .section-title {
         margin-bottom: 10rem;
 
@@ -124,6 +149,11 @@
     @include svg(rgba(255, 255, 255, 0.75));
     margin: 3rem 4rem;
     @include transition(0.4s ease-in-out);
+
+    @media #{$lt-md-bs} {
+      font-size: 5rem;
+      margin: 1.5rem 2rem;
+    }
 
     &:hover {
       @include scale(1.25);

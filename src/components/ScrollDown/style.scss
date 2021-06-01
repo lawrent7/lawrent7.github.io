@@ -10,6 +10,8 @@
 
   .chevron {
     height: 0.8rem;
+    left: 50%;
+    margin-left: -1.4rem;
     @include opacity(0);
     position: absolute;
     @include transform(scale3d(0.5, 0.5, 0.5));
@@ -52,7 +54,6 @@
     font-family: $font-secondary;
     font-size: 1.2rem;
     margin-top: 7.5rem;
-    margin-left: -3rem;
     @include opacity(0.5);
     text-transform: uppercase;
     white-space: nowrap;

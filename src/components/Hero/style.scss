@@ -13,7 +13,7 @@
     position: relative;
     width: 100%;
 
-    .container {
+    .page-center {
       @include align_items(center);
       @include flexbox(flex);
       @include justify_content(center);
@@ -37,6 +37,14 @@
         padding: 0;
         position: relative;
         width: auto;
+
+        @media #{$md} {
+          font-size: 6rem;
+        }
+
+        @media #{$lt-md-bs} {
+          font-size: 5rem;
+        }
       }
     }
   }

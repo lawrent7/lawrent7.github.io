@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PageHelmet from "../../components/Helmet";
 import Hero from '../../components/Hero';
 import Lightbox from 'react-image-lightbox';
-import Masonry from "react-responsive-masonry";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { PortfolioItems } from './portfolio';
 import './style.scss';
 
@@ -33,43 +33,47 @@ class Portfolio extends Component {
             titleParallaxOffset="0.5"
           />
           <div className="section portfolio">
-            <div className="container">
+            <div className="page-center">
               <div className="portfolio-area">
-                <Masonry columnsCount={2} gutter="8rem">
-                  {PortfolioItems.map((value, index) => (
-                    <>
-                      {isOpen && (
-                        <Lightbox
-                          mainSrc={PortfolioItems[item].bigImage}
-                          nextSrc={PortfolioItems[(item + 1) % PortfolioItems.length]}
-                          prevSrc={PortfolioItems[(item + PortfolioItems.length - 1) % PortfolioItems.length]}
-                          onCloseRequest={() => this.setState({ isOpen: false })}
-                          onMovePrevRequest={() =>
-                          this.setState({
-                            item: (item + PortfolioItems.length - 1) % PortfolioItems.length,
-                          })
-                          }
-                          onMoveNextRequest={() =>
+                <ResponsiveMasonry
+                  columnsCountBreakPoints={{0: 1, 992: 2}}
+                >
+                  <Masonry gutter="8rem">
+                    {PortfolioItems.map((value, index) => (
+                      <>
+                        {isOpen && (
+                          <Lightbox
+                            mainSrc={PortfolioItems[item].bigImage}
+                            nextSrc={PortfolioItems[(item + 1) % PortfolioItems.length]}
+                            prevSrc={PortfolioItems[(item + PortfolioItems.length - 1) % PortfolioItems.length]}
+                            onCloseRequest={() => this.setState({ isOpen: false })}
+                            onMovePrevRequest={() =>
                             this.setState({
-                              item: (item + 1) % PortfolioItems.length,
+                              item: (item + PortfolioItems.length - 1) % PortfolioItems.length,
                             })
-                          }
-                        />
-                      )}
-                      <div className="portfolio-item">
-                        <div className="portfolio" onClick={() => this.setState({ isOpen: true, item: index })}>
-                          <div className="thumbnail">
-                            <div className="thumbnail-inner">
-                              <a href="#portfolio-details">
-                                <img src={value.bigImage} alt="Portfolio Images" />
-                              </a>
+                            }
+                            onMoveNextRequest={() =>
+                              this.setState({
+                                item: (item + 1) % PortfolioItems.length,
+                              })
+                            }
+                          />
+                        )}
+                        <div className="portfolio-item">
+                          <div className="portfolio" onClick={() => this.setState({ isOpen: true, item: index })}>
+                            <div className="thumbnail">
+                              <div className="thumbnail-inner">
+                                <a href="#portfolio-details">
+                                  <img src={value.bigImage} alt="Portfolio Images" />
+                                </a>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </>
-                  ))}
-                </Masonry>
+                      </>
+                    ))}
+                  </Masonry>
+                </ResponsiveMasonry>
               </div>
             </div>
           </div>

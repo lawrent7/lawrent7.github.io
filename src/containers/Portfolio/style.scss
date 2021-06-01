@@ -5,6 +5,10 @@
     &.portfolio {
       padding: 10rem 0 25rem;
 
+      @media #{$xs} {
+        padding: 10rem 0 15rem;
+      }
+
       .portfolio-item {
         .portfolio {
           .thumbnail {

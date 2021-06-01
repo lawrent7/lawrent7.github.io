@@ -7,7 +7,7 @@ const CTA = ({
   return (
     <div className="section cta">
       <div className="call-to-action">
-        <div className="container">
+        <div className="page-center">
           <div className="row">
             <div className="col-lg-12">
               <div className="inner text-center">

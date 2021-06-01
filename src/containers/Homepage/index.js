@@ -49,16 +49,16 @@ const Homepage = () => {
       <PageHelmet pageTitle="Laur" />
       <div className="homepage" id="home"> {/* active-dark */}
         <div className="section home-hero">
-          <div className="slide designer-portfolio slider-style-3 d-flex align-items-center justify-content-center">
-            <div className="container">
+          <div className="slide designer-portfolio d-flex align-items-center justify-content-center">
+            <div className="page-center">
               <div className="row align-items-center">
-                <div className="col-lg-5 col-sm-5">
+                <div className="col-lg-5">
                   <div className="designer-thumbnail">
                     <img src={require('../../assets/images/avatar.jpg')} alt="Slider Images" />
                   </div>
                 </div>
-                <div className="col-lg-7 col-sm-7">
-                  <div className="inner text-left">
+                <div className="col-lg-7">
+                  <div className="inner">
                     <span>Passionate digital designer</span>
                     <h1 className="title">Hi! I am Laur,<br/>
                       <TextLoop>
@@ -75,7 +75,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="section services">
-          <div className="container">
+          <div className="page-center">
             <div className="row">
               <div className="col-lg-12">
                 <div className="section-title text-center">
@@ -86,7 +86,7 @@ const Homepage = () => {
             </div>
             <div className="row creative-service">
               {ServiceList.map( (val , i) => (
-                <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" key={i}>
+                <div className="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12" key={i}>
                   <div className="service">
                     <div className="icon">
                       {val.icon}
@@ -104,7 +104,7 @@ const Homepage = () => {
         <CTA text="Have a project in mind?" title="How can I help?" link="mailto:contact@laur.design" label="Let's talk!" />
         <div className="section portfolio">
           <div>
-            <div className="container">
+            <div className="page-center">
               <div className="row">
                 <div className="col-lg-12">
                   <div className="section-title text-center">
@@ -116,7 +116,7 @@ const Homepage = () => {
             </div>
           </div>
           <div className="portfolio-latest">
-            <div className="container">
+            <div className="page-center">
               <div className="row">
                 {HomepagePortfolio.map((value, index) => (
                   <div className="col-lg-4" key={index}>

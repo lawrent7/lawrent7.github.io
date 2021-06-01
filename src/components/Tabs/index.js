@@ -10,7 +10,7 @@ const TabsSection = () => {
 
   return (
     <div className="tabs-area">
-      <div className="container">
+      <div className="page-center">
         <div className="row">
           <div className="col-lg-12">
             <Tabs>

@@ -12,7 +12,7 @@ const Social = ({ homeLink }) => {
 
   return (
     <div className="social-share-inner">
-      <ul className="social-share unstyled d-flex justify-content-start">
+      <ul className="social-share unstyled d-flex">
         {SocialShare.map((val , i) => (
           <li key={i}><a href={`${val.link}`} target="_blank" rel="noopener noreferrer">{val.Social}</a></li>
         ))}

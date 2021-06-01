@@ -26,7 +26,7 @@ const About = () => {
           titleParallaxOffset="0.5"
         />
         <div className="section about">
-          <div className="container">
+          <div className="page-center">
             <div className="row">
               <div className="col-lg-5">
                 <div className="thumbnail">
@@ -60,7 +60,7 @@ const About = () => {
         </div>
         <div className="section tools">
           <div className="tools-inner">
-            <div className="container">
+            <div className="page-center">
               <div className="row">
                 <div className="logos">
                   <SiHtml5 />
@@ -93,7 +93,7 @@ const About = () => {
           </div>
         </div>
         <div className="section progresses">
-          <div className="container">
+          <div className="page-center">
             <div className="row">
               <div className="col-lg-12">
                 <div className="section-title text-center">

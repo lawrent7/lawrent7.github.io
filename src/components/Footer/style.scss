@@ -26,6 +26,11 @@ footer {
     top: -0.1rem;
     width: 100%;
     z-index: 55;
+
+    @media #{$xs} {
+      background-size: auto 10rem;
+      height: 10rem;
+    }
   }
 
   .footer-left {
@@ -219,7 +224,7 @@ footer {
       overflow: hidden;
       text-align: center;
       width: 5rem;
-      z-index: 999;
+      z-index: 990;
     }
   
     svg {

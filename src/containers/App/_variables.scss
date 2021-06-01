@@ -332,13 +332,30 @@ $line-height: 1.714286;
   transform: translate($x, $y);
 }
 
-$xl:     'only screen and (min-width: 1600px)';
-$lt-xl:  'only screen and (max-width: 1599px)';
-$lg:     'only screen and (min-width: 1280px) and (max-width: 1599px)';
-$gt-lg:  'only screen and (min-width: 1280px)';
-$lt-lg:  'only screen and (max-width: 1279px)';
-$md:     'only screen and (min-width: 960px) and (max-width: 1279px)';
-$gt-md:  'only screen and (min-width: 960px)';
-$lt-md:  'only screen and (max-width: 959px)';
-$sm:     'only screen and (min-width: 600px) and (max-width: 959px)';
-$xs:     'only screen and (max-width: 599px)';
+$xl:       'only screen and (min-width: 1600px)';
+$lt-xl:    'only screen and (max-width: 1599px)';
+$lg:       'only screen and (min-width: 1280px) and (max-width: 1599px)';
+$gt-lg:    'only screen and (min-width: 1280px)';
+$lt-lg:    'only screen and (max-width: 1279px)';
+$gt-lg-bs: 'only screen and (min-width: 992px)';
+$lt-md-bs: 'only screen and (max-width: 991px)';
+$md:       'only screen and (min-width: 960px) and (max-width: 1279px)';
+$gt-md:    'only screen and (min-width: 960px)';
+$lt-md:    'only screen and (max-width: 959px)';
+$sm:       'only screen and (min-width: 600px) and (max-width: 959px)';
+$xs:       'only screen and (max-width: 599px)';
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px
+// ) !default;
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px
+// ) !default;
