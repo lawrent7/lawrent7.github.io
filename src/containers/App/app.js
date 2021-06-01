@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Route, Switch } from 'react-router-dom';
 import ScrollToTop from "../../components/ScrollToTop";
 import Header from "../../components/Header";
 import Homepage from '../Homepage';
@@ -13,7 +13,7 @@ const App = () => {
   document.body.classList = '';
 
   return (
-    <Router>
+    <HashRouter basename="/">
       <ScrollToTop />
       <Header />
       <Switch>
@@ -23,7 +23,7 @@ const App = () => {
         <Route component={PageNotFound} />
       </Switch>
       <Footer />
-    </Router>
+    </HashRouter>
   );
 };
 

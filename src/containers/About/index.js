@@ -16,7 +16,7 @@ const About = () => {
 
   return (
     <React.Fragment>
-      <PageHelmet pageTitle='About' pageDescription='About' />
+      <PageHelmet pageTitle='About Laur' />
       <div className="about-page" id="about">
         <Hero
           title="About Me"

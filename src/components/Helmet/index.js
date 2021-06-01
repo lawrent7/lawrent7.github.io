@@ -1,11 +1,10 @@
 import React from "react";
 import { Helmet } from 'react-helmet';
 
-const PageHelmet = ({ pageTitle, pageDescription }) => {
+const PageHelmet = ({ pageTitle }) => {
   return (
     <Helmet>
       <title>{pageTitle}</title>
-      <meta name="description" content={pageDescription} />
     </Helmet>
   );
 };

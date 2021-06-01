@@ -23,7 +23,7 @@ class Portfolio extends Component {
 
     return (
       <React.Fragment>
-        <PageHelmet pageTitle='Portfolio' pageDescription='Portfolio' />
+        <PageHelmet pageTitle='Laur Portfolio' />
         <div className="portfolio-page" id="portfolio">
           <Hero
             title="My Work"
