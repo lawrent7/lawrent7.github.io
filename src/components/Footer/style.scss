@@ -42,7 +42,7 @@ footer {
 
     @media #{$lt-xl} {
       max-width: 100%;
-      padding: 15rem 10rem 5rem;
+      padding: 15rem 10rem 10rem;
     }
 
     @media #{$sm} {
@@ -67,7 +67,7 @@ footer {
       z-index: 59;
 
       @media #{$lt-xl} {
-        height: 50.9rem;
+        height: 56rem;
         top: 0;
       }
 
@@ -100,6 +100,10 @@ footer {
         @include translate(0, -50%);
         width: 30rem;
         z-index: -1;
+
+        @media #{$lt-xl} {
+          right: 5rem;
+        }
 
         @media #{$lt-md} {
           display: none;
