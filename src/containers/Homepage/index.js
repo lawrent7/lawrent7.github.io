@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import TextLoop from "react-text-loop";
 import { FiLayers, FiMonitor, FiSmartphone, FiActivity, FiCast, FiCode } from "react-icons/fi";
 import CTA from '../../components/CTA';
 import { HomepagePortfolio } from '../Portfolio/portfolio';
@@ -10,13 +9,13 @@ const Homepage = () => {
   const ServiceList = [
     {
       icon: <FiMonitor />,
-      title: 'UI/UX Design',
+      title: 'UI Design',
       description: 'I design and implement products ideas that are useful, easy to use, user friendly and delightful to interact with.'
     },
     {
       icon: <FiCast />,
-      title: 'Cross-Platform Design',
-      description: 'Cross-platform facilitate developers to have complete mind on one coding base that can run on multiple mobile platforms.'
+      title: 'Cross-Platform Implementation',
+      description: 'Facilitate developers to have complete mind on one coding base that can run on multiple mobile platforms.'
     },
     {
       icon: <FiLayers />,
@@ -35,7 +34,7 @@ const Homepage = () => {
     },
     {
       icon: <FiActivity />,
-      title: 'UI/UX Consulting',
+      title: 'UI Consulting',
       description: 'I rate how well your site or application adheres to best practices and UI principles to make the findings actionable.'
     },
   ]
@@ -56,13 +55,9 @@ const Homepage = () => {
               </div>
               <div className="col-lg-7">
                 <div className="inner">
-                  <span>Passionate digital designer</span>
+                  <span>"Make it simple, but significant."</span>
                   <h1 className="title">Hi! I am Laur,<br/>
-                    <TextLoop>
-                      <span>Web Designer</span>
-                      <span>UI/UX Designer</span>
-                      <span>Front-End Dev</span>
-                    </TextLoop>
+                    <span>Senior UI Developer</span>
                   </h1>
                   <h2>based in Bucharest.</h2>
                 </div>
