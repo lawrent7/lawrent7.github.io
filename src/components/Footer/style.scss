@@ -15,7 +15,7 @@ footer {
   }
   
   &:after {
-    background-image: url(../../assets/images/footer-background.png);
+    background-image: url(https://ik.imagekit.io/laurdesign/images/footer-background_gOZCVX_0MX.png);
     background-repeat: repeat-x;
     background-size: auto 18rem;
     content: "";
@@ -58,7 +58,7 @@ footer {
     }
 
     &:before {
-      background-image: url(../../assets/images/footer-bubble.png);
+      background-image: url(https://ik.imagekit.io/laurdesign/images/footer-bubble_nVBXqhRjq.png);
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: cover;
@@ -98,7 +98,7 @@ footer {
 
       &:after {
         color: rgba(0, 0, 0, 0.1);
-        content: url(../../assets/images/footer-contact.png);
+        content: url(https://ik.imagekit.io/laurdesign/images/footer-contact_xiLoVMaYD.png);
         font-size: 24rem;
         font-weight: 900;
         height: 34rem;
@@ -240,7 +240,10 @@ footer {
         font-size: 1.2rem;
         line-height: 1;
         margin-top: 1.5rem;
-        opacity: 0.25;
+
+        .heart {
+          color: $red-color;
+        }
       }
     }
   }

@@ -1,9 +1,7 @@
-import React from "react";
-import { FaLess, FaSass, FaSourcetree } from "react-icons/fa";
+import React, { useState } from "react";
 import { FiDownloadCloud } from "react-icons/fi";
-import {
-  SiHtml5, SiCss3, SiTailwindcss, SiBootstrap, SiReact, SiTypescript, SiAngular, SiPhp, SiWordpress, SiGithub, SiBitbucket, SiJira, SiAdobexd, SiFigma, SiAdobephotoshop, SiAdobeillustrator, SiVisualstudio, SiVisualstudiocode, SiMaterialUi, SiMaterialdesign, SiFontawesome,
-} from "react-icons/si";
+import ReactTooltip from 'react-tooltip';
+import { toolsList } from '../../constants/tools';
 import PageHelmet from "../../components/Helmet";
 import Hero from '../../components/Hero';
 import TabsSection from "../../components/Tabs";
@@ -11,16 +9,18 @@ import ProgressBars from "../../components/ProgressBar";
 import './style.scss';
 
 const About = () => {
+  const [tooltip, showTooltip] = useState(true);
+
   document.body.classList = '';
   document.body.classList.add('about');
 
   return (
     <React.Fragment>
-      <PageHelmet pageTitle='About Laur' />
+      <PageHelmet pageTitle='About Laurentiu Cuciureanu | Senior UI Developer' />
       <div className="about-page" id="about">
         <Hero
           title="About Me"
-          imageSrc={require('../../assets/images/hero-about.jpg')}
+          imageSrc="https://ik.imagekit.io/laurdesign/images/hero-about_IlkjB8EkLF.jpg"
           overlay="90"
           imageParallaxOffset="0.5"
           titleParallaxOffset="0.5"
@@ -30,11 +30,11 @@ const About = () => {
             <div className="row">
               <div className="col-lg-5">
                 <div className="thumbnail">
-                  <img src={require('../../assets/images/about-laur.jpg')} alt="Laurentiu Cuciureanu"/>
+                  <img src="https://ik.imagekit.io/laurdesign/images/about-laur_r4OcVWLEn.jpg" alt="Laurentiu Cuciureanu"/>
                 </div>
                 <div className="text-center">
                   <a
-                    href={require('../../assets/docs/LC_Resume.pdf')}
+                    href="https://ik.imagekit.io/laurdesign/docs/LC_Resume_9LAdYnYHL.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary btn-download"
@@ -63,30 +63,19 @@ const About = () => {
             <div className="page-center">
               <div className="row">
                 <div className="logos">
-                  <SiHtml5 />
-                  <SiCss3 />
-                  <FaLess />
-                  <FaSass />
-                  <SiTailwindcss />
-                  <SiBootstrap />
-                  <SiMaterialUi />
-                  <SiMaterialdesign />
-                  <SiFigma />
-                  <SiAdobexd />
-                  <SiFontawesome />
-                  <SiReact />
-                  <SiTypescript />
-                  <SiAngular />
-                  <SiPhp />
-                  <SiWordpress />
-                  <SiGithub />
-                  <SiBitbucket />
-                  <FaSourcetree />
-                  <SiJira />
-                  <SiAdobephotoshop />
-                  <SiAdobeillustrator />
-                  <SiVisualstudio />
-                  <SiVisualstudiocode />
+                  {toolsList.map((value, index) => (
+                    <span
+                      key={index}
+                      data-tip={value.name}
+                      onMouseEnter={() => showTooltip(true)}
+                      onMouseLeave={() => {
+                        showTooltip(false);
+                        setTimeout(() => showTooltip(true), 50);
+                      }}
+                    >
+                      {value.icon}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -105,6 +94,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      {tooltip && <ReactTooltip effect="solid" />}
     </React.Fragment>
   );
 };

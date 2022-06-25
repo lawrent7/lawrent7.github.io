@@ -13,13 +13,11 @@
         border: 0 none;
         @include border-radius(100%);
         color: $text-color;
-        display: inline-block;
+        @include flexbox(flex);
         font-size: $font-size;
-        height: auto;
         line-height: inherit;
-        text-align: left;
+        text-align: center;
         @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
-        width: 3rem;
       }
 
       &:hover {

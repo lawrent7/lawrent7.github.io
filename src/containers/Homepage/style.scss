@@ -5,11 +5,12 @@
     &.home-hero {
       background-color: $text-color;
       height: calc(100vh - 20rem);
+      height: calc((var(--vh, 1vh) * 100) - 20rem);
       min-height: 75rem;
       position: relative;
 
       &:after {
-        background-image: url(../../assets/images/hero-background.png);
+        background-image: url(https://ik.imagekit.io/laurdesign/images/hero-background_H-qaeZ7rk_.png);
         background-repeat: repeat-x;
         background-size: auto 20rem;
         bottom: -19.9rem;
@@ -29,14 +30,15 @@
       > .slide {
         background: transparent;
         height: calc(100vh - 20rem);
+        height: calc((var(--vh, 1vh) * 100) - 20rem);
         min-height: 75rem;
 
         .designer-thumbnail {
-          background-image: url(../../assets/images/avatar-background.png);
+          background-image: url(https://ik.imagekit.io/laurdesign/images/avatar-background_yJ4GLZ_cp.png);
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          height: 45rem;
+          height: 45.1rem;
           position: relative;
           width: 44rem;
 

@@ -26,7 +26,7 @@ const Header = () => {
         <div className="header-left d-flex align-items-center">
           <div className="logo">
             <NavLink exact to="/">
-              <img src={require('../../assets/images/logo.png')} alt="Laurentiu Cuciureanu" />
+              <img src="https://ik.imagekit.io/laurdesign/images/logo_Id19f8G-l2.svg" alt="Laurentiu Cuciureanu" />
             </NavLink>
           </div>
           <nav className="main-menu">

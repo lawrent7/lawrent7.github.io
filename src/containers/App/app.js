@@ -9,6 +9,14 @@ import PageNotFound from "../PageNotFound";
 import Footer from "../../components/Footer";
 import './app.scss';
 
+const appViewportHeight = () => {
+  const doc = document.documentElement;
+  doc.style.setProperty('--vh', (window.innerHeight * .01) + 'px');
+}
+
+window.addEventListener('resize', appViewportHeight);
+appViewportHeight();
+
 const App = () => {
   document.body.classList = '';
 

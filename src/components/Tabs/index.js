@@ -4,9 +4,9 @@ import './style.scss';
 
 const TabsSection = () => {
   const 
-      tab1 = "Main skills",
-      tab2 = "Experience",
-      tab3 = "Education & Certification";
+    tab1 = "Main skills",
+    tab2 = "Experience",
+    tab3 = "Education & Certification";
 
   return (
     <div className="tabs-area">
@@ -24,11 +24,11 @@ const TabsSection = () => {
                 <div className="single-tab-content">
                   <ul>
                     <li>
-                      <strong>User experience design <span> - UI/UX</span></strong>
+                      <strong>User Interface Design <span> - UI</span></strong>
                       Delight the user and make it work.
                     </li>
                     <li>
-                      <strong>Web and user interface design<span> - Development</span></strong>
+                      <strong>User Interface Implementation<span> - Development</span></strong>
                       Websites, blogs, online shops, web experiences.
                     </li>
                     <li>
@@ -43,13 +43,13 @@ const TabsSection = () => {
                 <div className="single-tab-content">
                   <ul>
                     <li>
-                      <strong>UI/UX Designer</strong>2018 - Current
+                      <strong>Senior UI Developer</strong>2018 - Current
                     </li>
                     <li>
-                      <strong>Front-End Developer</strong>2013 - Current
+                      <strong>Web Designer</strong>2012 - 2018
                     </li>
                     <li>
-                      <strong>Data Entry Specialist</strong>2012-2013
+                      <strong>Freelancer</strong>2010 - 2012
                     </li>
                   </ul>
                 </div>

@@ -1,86 +1,84 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import ReactTooltip from 'react-tooltip';
+import { portfolioImages } from '../../constants/portfolio';
 import PageHelmet from "../../components/Helmet";
 import Hero from '../../components/Hero';
-import Lightbox from 'react-image-lightbox';
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { PortfolioItems } from './portfolio';
+import { Gallery, Item } from 'react-photoswipe-gallery';
+import 'photoswipe/dist/photoswipe.css';
 import './style.scss';
 
-class Portfolio extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      item: 0,
-      isOpen: false,
-    };
-  }
+const Portfolio = () => {
+  const [tooltip, showTooltip] = useState(true);
 
-  render() {
-    const { item, isOpen } = this.state;
+  document.body.classList = '';
+  document.body.classList.add('portfolio');
 
-    document.body.classList = '';
-    document.body.classList.add('portfolio');
+  const options = {
+    bgOpacity: 0.9,
+    zoom: false,
+    showHideAnimationType: 'zoom',
+    imageClickAction: 'none'
+  };
 
-    return (
-      <React.Fragment>
-        <PageHelmet pageTitle='Laur Portfolio' />
-        <div className="portfolio-page" id="portfolio">
-          <Hero
-            title="My Work"
-            imageSrc={require('../../assets/images/hero-portfolio.jpg')}
-            overlay="90"
-            imageParallaxOffset="0.5"
-            titleParallaxOffset="0.5"
-          />
-          <div className="section portfolio">
-            <div className="page-center">
-              <div className="portfolio-area">
-                <ResponsiveMasonry
-                  columnsCountBreakPoints={{0: 1, 992: 2}}
-                >
-                  <Masonry gutter="8rem">
-                    {PortfolioItems.map((value, index) => (
-                      <>
-                        {isOpen && (
-                          <Lightbox
-                            mainSrc={PortfolioItems[item].bigImage}
-                            nextSrc={PortfolioItems[(item + 1) % PortfolioItems.length]}
-                            prevSrc={PortfolioItems[(item + PortfolioItems.length - 1) % PortfolioItems.length]}
-                            onCloseRequest={() => this.setState({ isOpen: false })}
-                            onMovePrevRequest={() =>
-                            this.setState({
-                              item: (item + PortfolioItems.length - 1) % PortfolioItems.length,
-                            })
-                            }
-                            onMoveNextRequest={() =>
-                              this.setState({
-                                item: (item + 1) % PortfolioItems.length,
-                              })
-                            }
-                          />
-                        )}
-                        <div className="portfolio-item">
-                          <div className="portfolio" onClick={() => this.setState({ isOpen: true, item: index })}>
-                            <div className="thumbnail">
-                              <div className="thumbnail-inner">
-                                <a href="#portfolio-details" rel="noopener noreferrer">
-                                  <img src={value.bigImage} alt="Laur Portfolio Item" />
-                                </a>
-                              </div>
-                            </div>
+  return (
+    <React.Fragment>
+      <PageHelmet pageTitle='Portfolio of Laurentiu Cuciureanu | Senior UI Developer' />
+      <div className="portfolio-page" id="portfolio">
+        <Hero
+          title="My Work"
+          imageSrc="https://ik.imagekit.io/laurdesign/images/hero-portfolio_wUFbDs7W_0.jpg"
+          overlay="90"
+          imageParallaxOffset="0.5"
+          titleParallaxOffset="0.5"
+        />
+        <div className="section portfolio">
+          <div className="page-center">
+            <div className="portfolio-area">
+              <Gallery options={options}>
+                {portfolioImages.map((value, index) => (
+                  <Item
+                    key={index} 
+                    original={value.original}
+                    width={value.width}
+                    height={value.height}
+                  >
+                    {({ ref, open }) => (
+                      <div className="portfolio-item" ref={ref} onClick={open}>
+                        <img
+                          src={value.thumbnail}
+                          alt={value.alt}
+                          title={value.title}
+                        />
+                        <div className="description">
+                          <div className="title">{value.title}</div>
+                          <div className="tools">
+                            { value.tools.map((tool, index) => (
+                              <span
+                                key={index}
+                                data-tip={tool.name}
+                                onMouseEnter={() => showTooltip(true)}
+                                onMouseLeave={() => {
+                                  showTooltip(false);
+                                  setTimeout(() => showTooltip(true), 50);
+                                }}
+                              >
+                                {tool.icon}
+                              </span>
+                            ))}
                           </div>
                         </div>
-                      </>
-                    ))}
-                  </Masonry>
-                </ResponsiveMasonry>
-              </div>
+                      </div>
+                    )}
+                  </Item>
+                ))}
+              </Gallery>
             </div>
           </div>
         </div>
-      </React.Fragment>
-    )
-  }
+      </div>
+      {tooltip && <ReactTooltip effect="solid" />}
+    </React.Fragment>
+  )
 }
 
 export default Portfolio;

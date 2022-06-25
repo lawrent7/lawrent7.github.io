@@ -1,6 +1,11 @@
 @import '../App/variables';
 
 body.page-404 {
+  background-image: url(https://ik.imagekit.io/laurdesign/images/geometric-pattern_nFa5XNBQHO.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   header,
   footer {
     display: none !important;
@@ -11,6 +16,7 @@ body.page-404 {
   @include align_items(center);
   @include flexbox(flex);
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   min-height: 50rem;
 
   h1.title {

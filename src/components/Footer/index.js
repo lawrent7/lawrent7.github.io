@@ -16,8 +16,8 @@ const Footer = () => {
       <div className="footer-left">
         <div className="inner">
           <span>Ready to do this?</span>
-          <h2>Let's get <br /> to work</h2>
-          <a className="btn btn-secondary" href="mailto:contact@laur.design" rel="noopener noreferrer">Contact Me</a>
+          <h2>Let's get <br /> started!</h2>
+          <a className="btn btn-secondary" href="mailto:laurentiu.cuciureanu@gmail.com?subject=Let's get started!" target="_blank" rel="noopener noreferrer">Contact Me</a>
         </div>
       </div>
       <div className="footer-right">
@@ -28,7 +28,7 @@ const Footer = () => {
               <ul className="unstyled">
                 <li><NavLink exact to="/about">About</NavLink></li>
                 <li><NavLink exact to="/portfolio">Work</NavLink></li>
-                <li><a href="mailto:contact@laur.design" rel="noopener noreferrer">Let's Talk</a></li>
+                <li><a href="mailto:laurentiu.cuciureanu@gmail.com?subject=Let's talk!" target="_blank" rel="noopener noreferrer">Let's talk!</a></li>
               </ul>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="col-lg-12">
             <div className="copyright-text">
               <p>Copyright © {showCurrentYear()}. All Rights Reserved to Laurentiu Cuciureanu.</p>
-              <small>Made with React</small>
+              <small>Made with <span className="heart">&hearts;</span> in React.</small>
             </div>
           </div>
         </div>

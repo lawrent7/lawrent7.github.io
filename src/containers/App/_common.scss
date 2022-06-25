@@ -34,6 +34,11 @@ body {
   line-height: $line-height;
 }
 
+body > iframe {
+  display: none;
+  pointer-events: none;
+}
+
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   background-color: rgba($text-color, 0.5);
@@ -313,36 +318,33 @@ svg:not(:root) {
 }
 
 .portfolio-item {
-  .portfolio {
-    position: relative;
+  @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
 
-    .thumbnail {
-      text-align: center;
-
-      img {
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -o-crisp-edges;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-        -ms-interpolation-mode: nearest-neighbor;
-        @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
-      }
-    }
-
-    &:hover {
-      .thumbnail {
-        img {
-          @include transform(translate3d(0, -1rem, 0));
-        }
-      }
-    }
-  }
-}
-
-.thumb,
-.thumbnail {
   img {
     @include border-radius(1rem);
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+
+    .home-page & {
+      @include box-shadow(0 0.5rem 0.5rem -0.3rem rgba($text-color, 0.2),
+                          0 0.8rem 1rem 0.1rem rgba($text-color, 0.14),
+                          0 0.3rem 1.4rem 0.2rem rgba($text-color, 0.12));
+    }
+  }
+
+  &:hover {
+    img {
+      .home-page & {
+        @include box-shadow(0 0.8rem 1rem -0.5rem rgba($text-color, 0.2),
+                            0 1.6rem 2.4rem 0.2rem rgba($text-color, 0.14),
+                            0 0.6rem 3rem 0.5rem rgba($text-color, 0.12));
+        @include transform(translate3d(0, -1rem, 0));
+      }
+    }
   }
 }
 
@@ -780,4 +782,31 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+/* Photoswipe Gallery */
+.pswp {
+  .btn,
+  button {
+    &:hover {
+      @include translate(0, 0);
+    }
+  }
+
+  .pswp__img {
+    cursor: default;
+  }
+}
+
+/* Tooltip */
+body .__react_component_tooltip {
+  border: 0 none;
+  @include border-radius(0.4rem);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 0.8rem 1.6rem;
+
+  &.type-dark {
+    background: $text-color;
+  }
 }

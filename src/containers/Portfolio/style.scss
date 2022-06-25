@@ -9,12 +9,131 @@
         padding: 10rem 0 15rem;
       }
 
+      .portfolio-area {
+        @include align_items(start);
+        @include flexbox(flex);
+        @include flex_direction(row);
+        @include flex_wrap(wrap);
+        margin: 0 -1.5rem;
+
+        @media #{$lt-lg} {
+          @include justify_content(center);
+        }
+
+        @media #{$lt-md} {
+          margin: 0;
+        }
+      }
+
       .portfolio-item {
-        .portfolio {
-          .thumbnail {
-            img {
-              max-height: 48rem;
+        @include border-radius(0.8rem);
+        @include box-shadow(0 0.5rem 0.5rem -0.3rem rgba($text-color, 0.2),
+                            0 0.8rem 1rem 0.1rem rgba($text-color, 0.14),
+                            0 0.3rem 1.4rem 0.2rem rgba($text-color, 0.12));
+        cursor: pointer;
+        @include flexbox(flex);
+        @include flex_direction(column);
+        margin: 1.5rem;
+        position: relative;
+        width: calc(33.3333% - 3rem);
+
+        @media #{$lt-lg} {
+          max-width: 35rem;
+        }
+
+        @media #{$md} {
+          width: calc(50% - 3rem);
+        }
+
+        @media #{$lt-md} {
+          margin: 1.5rem 0;
+          width: 100%;
+        }
+
+        img {
+          @include border-radius(0.8rem);
+          overflow: hidden;
+          width: 35rem;
+
+          @media #{$lt-md} {
+            width: 100%;
+          }
+        }
+
+        .description {
+          @include align_items(flex-end);
+          background: $red-color;
+          background: -moz-linear-gradient(180deg, rgba($red-color,0) 62%, rgba($red-color,0.04) 63.94%, rgba($red-color,0.08) 65.89%, rgba($red-color,0.12) 67.83%, rgba($red-color,0.16) 69.78%, rgba($red-color,0.2) 71.72%, rgba($red-color,0.24) 73.67%, rgba($red-color,0.28) 75.61%, rgba($red-color,0.32) 77.56%, rgba($red-color,0.36) 79.5%, rgba($red-color,0.4) 81.44%, rgba($red-color,0.44) 83.39%, rgba($red-color,0.48) 85.33%, rgba($red-color,0.52) 87.28%, rgba($red-color,0.56) 89.22%, rgba($red-color,0.6) 91.17%);
+          background: -webkit-linear-gradient(180deg, rgba($red-color,0) 62%, rgba($red-color,0.04) 63.94%, rgba($red-color,0.08) 65.89%, rgba($red-color,0.12) 67.83%, rgba($red-color,0.16) 69.78%, rgba($red-color,0.2) 71.72%, rgba($red-color,0.24) 73.67%, rgba($red-color,0.28) 75.61%, rgba($red-color,0.32) 77.56%, rgba($red-color,0.36) 79.5%, rgba($red-color,0.4) 81.44%, rgba($red-color,0.44) 83.39%, rgba($red-color,0.48) 85.33%, rgba($red-color,0.52) 87.28%, rgba($red-color,0.56) 89.22%, rgba($red-color,0.6) 91.17%);
+          background: linear-gradient(180deg, rgba($red-color,0) 62%, rgba($red-color,0.04) 63.94%, rgba($red-color,0.08) 65.89%, rgba($red-color,0.12) 67.83%, rgba($red-color,0.16) 69.78%, rgba($red-color,0.2) 71.72%, rgba($red-color,0.24) 73.67%, rgba($red-color,0.28) 75.61%, rgba($red-color,0.32) 77.56%, rgba($red-color,0.36) 79.5%, rgba($red-color,0.4) 81.44%, rgba($red-color,0.44) 83.39%, rgba($red-color,0.48) 85.33%, rgba($red-color,0.52) 87.28%, rgba($red-color,0.56) 89.22%, rgba($red-color,0.6) 91.17%);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$red-color",endColorstr="$red-color",GradientType=1); 
+          @include border-radius(0 0 0.8rem 0.8rem);
+          @include flexbox(flex);
+          @include flex_direction(row);
+          height: 100%;
+          @include justify_content(space-between);
+          left: 0;
+          @include opacity(0);
+          padding: 1.6rem;
+          position: absolute;
+          top: 0;
+          @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+          visibility: hidden;
+          width: 100%;
+
+          .title {
+            color: #FFF;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-shadow: 0.1rem 0.1rem 0.1rem $text-color;
+            white-space: nowrap;
+          }
+
+          .tools {
+            @include align_items(center);
+            @include flexbox(flex);
+            @include flex_direction(row);
+            @include justify_content(flex-end);
+            margin-left: 0.8rem;
+
+            span {
+              @include align_items(center);
+              background: #FFF;
+              @include border-radius(0.4rem);
+              @include flexbox(flex);
+              @include flex_direction(row);
+              height: 2.4rem;
+              @include justify_content(center);
+              @include transition(all .3s cubic-bezier(.645, .045, .355, 1));
+              width: 2.4rem;
+
+              + span {
+                margin-left: 0.4rem;
+              }
+
+              svg {
+                @include svg($text-color);
+                font-size: 1.6rem;
+              }
+
+              &:hover {
+                background: $yellow-color;
+              }
             }
+          }
+        }
+
+        &:hover {
+          @include box-shadow(0 0.8rem 1rem -0.5rem rgba($text-color, 0.2),
+                              0 1.6rem 2.4rem 0.2rem rgba($text-color, 0.14),
+                              0 0.6rem 3rem 0.5rem rgba($text-color, 0.12));
+
+          .description {
+            @include opacity(1);
+            visibility: visible;
           }
         }
       }
